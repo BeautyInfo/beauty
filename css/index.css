@@ -2,6 +2,11 @@
     box-shadow: inset 0 0 0 1px #ccc;
 }
 
+.shadow-img-size {
+	width: 100px;
+	height: 100px;
+}
+
 .navbar-nav iframe {
     margin-top: 10px;
     margin-bottom: 10px;
