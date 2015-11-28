@@ -16,13 +16,15 @@ $(function() {
 	$("#go-school-btn").click(function(event) {
 		event.preventDefault();	
 		$("#img-contents").html("");
-		if($("#fans-page-name").text() !== "表特大學") {
-			$("#fans-page-name,#go-school-btn").text("表特輔大");
-			url = "https://mywebservice.info/beautyUniversity/data_out.php?school=university";
+		if($("#fans-page-name").text() === "表特大學") {
+			$("#go-school-btn").text("表特大學");
+			$("fans-page-name").text("表特輔仁");
+			url = "https://mywebservice.info/beautyUniversity/data_out.php?school=FJU";
 		}
 		else {
-			$("#fans-page-name,#go-school-btn").text("表特大學");
-			url = "https://mywebservice.info/beautyUniversity/data_out.php?school=FJU";
+			$("#go-school-btn").text("表特輔仁");
+			$("fans-page-name").text("表特大學");
+			url = "https://mywebservice.info/beautyUniversity/data_out.php?school=university";
 		}
 		jsonGet(url);
 	});
