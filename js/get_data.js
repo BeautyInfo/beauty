@@ -15,9 +15,10 @@ $(function() {
 	 });
 
 	$(window).on('ajaxComplete', function() {
-		$( 'a[name="lightbox"]' ).imageLightbox();
   		setTimeout(function() {
   			$(window).lazyLoadXT();
   		}, 50);
+
+  		$( 'a[name="lightbox"]' ).imageLightbox();
 	});
 });
