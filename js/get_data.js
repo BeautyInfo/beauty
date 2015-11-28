@@ -15,17 +15,17 @@ $(function() {
 	$("#go-fju").click(function(event) {
 		event.preventDefault();
 		$("#main-content").html("");
-		$("#main-content").append('<a id="go-university" href="#" data-role="button">表特大學專頁</a>');
+		$("#main-content").append('<a onclick="goUniversity()" href="#" data-role="button">表特大學專頁</a>');
+		$(document).button("refresh");
 		jsonGet("https://mywebservice.info/beautyUniversity/data_out.php?school=FJU");
 	});
-
-	$("#go-university").click(function(event) {
-		event.preventDefault();
-		$("#main-content").html("");
-		$("#main-content").append('<a id="go-fju" href="#" data-role="button">表特輔大專頁</a>');
-		jsonGet("https://mywebservice.info/beautyUniversity/data_out.php?school=university");
-	});
 });
+
+function goUniversity() {
+	$("#main-content").html("");
+	$("#main-content").append('<a id="go-fju" href="#" data-role="button">表特輔大專頁</a>');
+	jsonGet("https://mywebservice.info/beautyUniversity/data_out.php?school=university");
+}
 
 function jsonGet(url) {
 	$.getJSON(url, function(data) {
