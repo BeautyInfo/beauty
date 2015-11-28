@@ -17,3 +17,12 @@ $(function() {
   		}, 50);
 	});
 });
+
+
+$( document ).on( "pagecreate", function() {
+	$( ".photopopup" ).on({
+		popupbeforeposition: function() {
+			$( ".photopopup img" ).css( "max-height", "500px" );
+		}
+	});
+});
