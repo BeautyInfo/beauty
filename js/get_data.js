@@ -6,7 +6,7 @@ $(function() {
 				continue;
 			}
 
-			str += "<a name='lightbox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'";
+			str += "<a name='lightbox'  class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'";
 			str += "<img class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
 			str += "</a>";
 		}
@@ -16,10 +16,8 @@ $(function() {
 
 	$(window).on('ajaxComplete', function() {
   		setTimeout(function() {
+  			$( '.swipebox' ).swipebox();
   			$(window).lazyLoadXT();
-  			//$( 'a[name="lightbox"]' ).imageLightbox();
   		}, 50);
-
-  		//
 	});
 });
