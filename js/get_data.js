@@ -1,6 +1,7 @@
 $(function() {
+	var url = "https://mywebservice.info/beautyUniversity/data_out.php?school=university";
 	$( '.swipebox' ).swipebox();
-	jsonGet("https://mywebservice.info/beautyUniversity/data_out.php?school=university");
+	jsonGet(url);
 	$(window).on('ajaxComplete', function() {
   		setTimeout(function() {
   			$(window).lazyLoadXT();
@@ -12,21 +13,19 @@ $(function() {
 		$("html, body").animate({ scrollTop: 0 }, "slow");
 	});
 
-	$("#go-fju").click(function(event) {
+	$("#go-school-btn").click(function(event) {
 		event.preventDefault();
-		$("#main-content").html("");
-		$("#main-content").append('<button id="university-btn" onclick="goUniversity()" href="#" data-role="button">表特大學專頁</button>');
-		$("#university-btn").button();
-		//$("#university-btn").button("enable");
-		jsonGet("https://mywebservice.info/beautyUniversity/data_out.php?school=FJU");
+		
+		$("#img-contents").html("");
+		if($("#fans-page-name").text() === "表特大學") {
+			url = "https://mywebservice.info/beautyUniversity/data_out.php?school=university";
+		}
+		else {
+			url = "https://mywebservice.info/beautyUniversity/data_out.php?school=FJU";
+		}
+		jsonGet(url);
 	});
 });
-
-function goUniversity() {
-	$("#main-content").html("");
-	$("#main-content").append('<a id="go-fju" href="#" data-role="button">表特輔大專頁</a>');
-	jsonGet("https://mywebservice.info/beautyUniversity/data_out.php?school=university");
-}
 
 function jsonGet(url) {
 	$.getJSON(url, function(data) {
@@ -41,6 +40,6 @@ function jsonGet(url) {
 			str += "</a>";
 		}
 
-		$("#main-content").append(str);
+		$("#img-contents").append(str);
 	 });
 }
