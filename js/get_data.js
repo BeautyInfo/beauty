@@ -12,15 +12,8 @@ $(function() {
 		}
 
 		$(".popup-gallery").append(str);
-	 });
 
-	$(window).on('ajaxComplete', function() {
-  		setTimeout(function() {
-  			$(window).lazyLoadXT();
-  		}, 50);
-
-  		/*
-  		$('.popup-gallery').magnificPopup({
+		$('.popup-gallery').magnificPopup({
 			delegate: 'a',
 			type: 'image',
 			tLoading: 'Loading image #%curr%...',
@@ -37,6 +30,11 @@ $(function() {
 				}
 			}
 		});
-		*/
+	 });
+
+	$(window).on('ajaxComplete', function() {
+  		setTimeout(function() {
+  			$(window).lazyLoadXT();
+  		}, 50);
 	});
 });
