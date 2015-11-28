@@ -16,7 +16,7 @@ $(function() {
 	$("#go-school-btn").click(function(event) {
 		event.preventDefault();	
 		$("#img-contents").html("");
-		if($("#fans-page-name").text() === "表特大學") {
+		if($("#fans-page-name").text() !== "表特大學") {
 			$("#fans-page-name, #go-school-btn").text("表特輔大");
 			url = "https://mywebservice.info/beautyUniversity/data_out.php?school=university";
 		}
