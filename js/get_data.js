@@ -5,7 +5,7 @@ $(function() {
 			if(data[i]["message"] === "" || data[i]["object_id"] === "") {
 				continue;
 			}
-			str = "<img data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type='thumbnail'"+ "' width='100' height='100'>";
+			str += "<img data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type='thumbnail'"+ "' width='100' height='100'>";
 		}
 
 		$("#main-content").append(str);
