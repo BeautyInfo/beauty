@@ -5,7 +5,9 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script src="js/jquery.lazyloadxt.min.js"></script>
 	<script src="js/get_data.js"></script>
@@ -16,13 +18,7 @@
 			<h2>表特牆</h2>
 		</div>
 		<div id="main-content" data-role="content">
-			<a href="#popupPhotoLandscape" data-rel="popup" data-position-to="window">
-				<img class="shadow-img shadow-img-size" src="http://graph.facebook.com/726196307513521/picture">
-			</a>
-			<div data-role="popup" id="popupPhotoLandscape" class="photopopup" data-overlay-theme="a" data-corners="	false">
-    				<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-				<img src="http://graph.facebook.com/726196307513521/picture">
-			</div>
+			<div class="popup-gallery"></div>
 		</div>
 		<div data-role="footer" data-position="fixed">
 			<h2>This is footer</h2>
