@@ -17,8 +17,9 @@ $(function() {
 	$(window).on('ajaxComplete', function() {
   		setTimeout(function() {
   			$(window).lazyLoadXT();
+  			$( 'a[name="lightbox"]' ).imageLightbox();
   		}, 50);
 
-  		$( 'a[name="lightbox"]' ).imageLightbox();
+  		//
 	});
 });
