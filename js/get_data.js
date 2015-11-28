@@ -33,14 +33,27 @@ $(function() {
 function jsonGet(url) {
 	$.getJSON(url, function(data) {
 		var str = "";
-		for (var i = data.length - 1; i >= 0; i--) {
-			if(data[i]["message"] === "" || data[i]["object_id"] === "") {
-				continue;
-			}
+		if(url.indexOf("university") !== -1) {
+			for (var i = data.length - 1; i >= 0; i--) {
+				if(data[i]["message"] === "" || data[i]["object_id"] === "") {
+					continue;
+				}
 
-			str += "<a class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
-			str += "<img class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
-			str += "</a>";
+				str += "<a class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
+				str += "<img class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
+				str += "</a>";
+			}
+		}
+		else {
+			for (var i = 0; i < data.length; i++) {
+				if(data[i]["message"] === "" || data[i]["object_id"] === "") {
+					continue;
+				}
+
+				str += "<a class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
+				str += "<img class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
+				str += "</a>";
+			}	
 		}
 
 		$("#img-contents").append(str);
