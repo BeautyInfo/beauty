@@ -21,8 +21,9 @@ $(function() {
 $( document ).on( "pagecreate", function() {
 	$( ".photopopup" ).on({
 		popupbeforeposition: function() {
-			var maxHeight = $( window ).height() + 100 + "px";
-			$( ".photopopup img" ).css( "max-height", maxHeight );
+			//var maxHeight = $( window ).height() + 100 + "px";
+			//$( ".photopopup img" ).css( "max-height", maxHeight );
+			$( ".photopopup img" ).css( "overflow", "hidden" );
 		}
 	});
 });
