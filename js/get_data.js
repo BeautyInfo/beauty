@@ -18,6 +18,7 @@ $(function() {
 	});
 });
 
+/*
 $( document ).on( "pagecreate", function() {
 	$( ".photopopup" ).on({
 		popupbeforeposition: function() {
@@ -27,3 +28,4 @@ $( document ).on( "pagecreate", function() {
 		}
 	});
 });
+*/
