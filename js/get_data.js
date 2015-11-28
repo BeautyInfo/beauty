@@ -1,4 +1,5 @@
 $(function() {
+	$( '.swipebox' ).swipebox();
 	$.getJSON("https://mywebservice.info/beautyUniversity/data_out.php", function(data) {
 		var str = "";
 		for (var i = data.length - 1; i >= 0; i--) {
@@ -16,7 +17,6 @@ $(function() {
 
 	$(window).on('ajaxComplete', function() {
   		setTimeout(function() {
-  			$( '.swipebox' ).swipebox();
   			$(window).lazyLoadXT();
   		}, 50);
 	});
