@@ -19,6 +19,7 @@ $(function() {
   			$(window).lazyLoadXT();
   		}, 50);
 
+  		/*
   		$('.popup-gallery').magnificPopup({
 			delegate: 'a',
 			type: 'image',
@@ -36,5 +37,6 @@ $(function() {
 				}
 			}
 		});
+		*/
 	});
 });
