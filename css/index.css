@@ -1,3 +1,8 @@
 img, video, iframe[data-src] {
     box-shadow: inset 0 0 0 1px #ccc;
 }
+
+.navbar-nav iframe {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
