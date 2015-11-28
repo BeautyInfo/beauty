@@ -6,12 +6,11 @@ $(function() {
 				if(data[i]["message"] === "" || data[i]["object_id"] === "") {
 					continue;
 				}
-				str += "<p><img data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type='thumbnail'"+ "' width='100' height='100'></p>";
+				str = "<img data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type='thumbnail'"+ "' width='100' height='100'>";
+				$("#main-content").append(str);
+				$(window).lazyLoadXT();
+          				$('#main-content').lazyLoadXT({visibleOnly: false, checkDuplicates: false});
 			}
-
-			$("#main-content").append(str);
-			$(window).lazyLoadXT();
-          			$('#main-content').lazyLoadXT({visibleOnly: false, checkDuplicates: false});
 		});
 	 }).lazyLoadXT({visibleOnly: false});
 });
