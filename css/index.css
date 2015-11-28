@@ -16,3 +16,10 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.imagelightbox {
+    position: fixed;
+    z-index: 9999;
+    -ms-touch-action: none;
+    touch-action: none;
+}
