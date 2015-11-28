@@ -21,5 +21,8 @@ $(function() {
   		}, 50);
 	});
 
-	$("html, body").animate({ scrollTop: 0 }, "slow");
+	$("#go-top").click(function(event) {
+		event.preventDefault();
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+	});
 });
