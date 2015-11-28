@@ -20,4 +20,13 @@ $(function() {
   			$(window).lazyLoadXT();
   		}, 50);
 	});
+
+	$('html,body').animate({
+		scrollTop: $('#test').css('top')
+	}, 800, function() {
+		$('html, body').animate({
+            			scrollTop: 0
+        		}, 800);
+
+    	});
 });
