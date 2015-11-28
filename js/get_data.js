@@ -33,7 +33,7 @@ $(function() {
 function jsonGet(url) {
 	$.getJSON(url, function(data) {
 		var str = "";
-		console.log(data.length);
+		var j = 0;
 		if(url.indexOf("university") !== -1) {
 			for (var i = data.length - 1; i >= 0; i--) {
 				if(data[i]["message"] === "" || data[i]["object_id"] === "") {
@@ -43,6 +43,7 @@ function jsonGet(url) {
 				str += "<a class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
 				str += "<img class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
 				str += "</a>";
+				j++;
 			}
 		}
 		else {
@@ -54,9 +55,10 @@ function jsonGet(url) {
 				str += "<a class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
 				str += "<img class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
 				str += "</a>";
+				j++;
 			}	
 		}
-
+		console.log(j);
 		$("#img-contents").append(str);
 	 });
 }
