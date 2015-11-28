@@ -16,7 +16,7 @@ $(function() {
 		event.preventDefault();
 		$("#main-content").html("");
 		$("#main-content").append('<a id="university-btn" onclick="goUniversity()" href="#" data-role="button">表特大學專頁</a>');
-		$("#university-btn").button("refresh");
+		$("#university-btn").button();
 		jsonGet("https://mywebservice.info/beautyUniversity/data_out.php?school=FJU");
 	});
 });
