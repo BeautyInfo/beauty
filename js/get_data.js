@@ -9,7 +9,6 @@ $(function() {
 		}
 
 		$("#main-content").append(str);
-     		//$('#main-content').lazyLoadXT({visibleOnly: false, checkDuplicates: false});
 	 });
 
 	$(window).on('ajaxComplete', function() {
