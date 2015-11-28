@@ -33,6 +33,7 @@ $(function() {
 function jsonGet(url) {
 	$.getJSON(url, function(data) {
 		var str = "";
+		console.log(data.length);
 		if(url.indexOf("university") !== -1) {
 			for (var i = data.length - 1; i >= 0; i--) {
 				if(data[i]["message"] === "" || data[i]["object_id"] === "") {
