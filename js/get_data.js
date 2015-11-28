@@ -17,13 +17,3 @@ $(function() {
   		}, 50);
 	});
 });
-
-
-$( document ).on( "pagecreate", function() {
-	$( ".photopopup" ).on({
-		popupbeforeposition: function() {
-			var maxHeight = $( window ).height() + 100 + "px";
-			$( ".photopopup img" ).css( "max-height", maxHeight );
-		}
-	});
-});
