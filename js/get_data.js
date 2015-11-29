@@ -2,6 +2,7 @@ $(function() {
 	var url = "https://mywebservice.info/beautyUniversity/data_out.php?school=university";
 	$( '.swipebox' ).swipebox();
 	jsonGet(url);
+	getCollegeProcess();
 	$(window).on('ajaxComplete', function() {
   		setTimeout(function() {
   			$(window).lazyLoadXT();
