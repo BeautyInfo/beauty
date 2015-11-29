@@ -28,6 +28,11 @@ $(function() {
 		}
 		jsonGet(url);
 	});
+
+	$("#highchart-btn").click(function(event) {
+		event.preventDefault();
+
+	})
 });
 
 function jsonGet(url) {
@@ -61,4 +66,14 @@ function jsonGet(url) {
 		console.log(j);
 		$("#img-contents").append(str);
 	 });
+}
+
+function getCollegeProcess() {
+	$.getJSON("https://mywebservice.info/beautyUniversity/colleges.php", function(data) {
+		console.log(data);
+	});
+}
+
+function processFJU(url) {
+
 }
