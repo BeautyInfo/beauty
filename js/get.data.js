@@ -6,7 +6,6 @@ $(function() {
 	var url = "http://mywebservice.info/beautyUniversity/data_out/school/university";
 	$( '.swipebox' ).swipebox();
 	jsonGet(url);
-	getCollegeProcess();
 	$(window).on('ajaxComplete', function() {
   		setTimeout(function() {
   			$(window).lazyLoadXT();
@@ -36,7 +35,17 @@ $(function() {
 
 	$("#highchart-btn").click(function(event) {
 		event.preventDefault();
-
+		var str = "";
+		if($("#fans-page-name").text() === "表特輔仁") {
+			str = "FJU";
+		}
+		else {
+			str = "university";
+		}
+		$("#img-contents").html("");
+		$("#chart-container").html("");
+		//using high chart
+		
 	});
 });
 
@@ -71,12 +80,6 @@ function jsonGet(url) {
 		console.log(j);
 		$("#img-contents").append(str);
 	 });
-}
-
-function getCollegeProcess() {
-	$.getJSON("http://mywebservice.info/beautyUniversity/data_out/school/colleges/university", function(data) {
-		console.log(data);
-	});
 }
 
 function processFJU(url) {
