@@ -39,12 +39,12 @@ $(function() {
 
 	});
 	
-	$(".shadow-img-size").mouseenter(function() {
+	$(".swipebox").mouseenter(function() {
 		$(".shadow-img-size").css('width', "0px");
 		$(".shadow-img-size").css('height', "0px");
 	});
 	
-	$(".shadow-img-size").mouseleave(function() {
+	$(".swipebox").mouseleave(function() {
 		$(".shadow-img-size").css('width', "100px");
 		$(".shadow-img-size").css('height', "100px");
 	});
