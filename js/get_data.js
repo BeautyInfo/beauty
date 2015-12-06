@@ -1,5 +1,5 @@
 $(function() {
-	var url = "https://mywebservice.info/beautyUniversity/data_out.php?school=university";
+	var url = "http://mywebservice.info/beautyUniversity/data_out/school/university";
 	$( '.swipebox' ).swipebox();
 	jsonGet(url);
 	getCollegeProcess();
@@ -15,17 +15,17 @@ $(function() {
 	});
 
 	$("#go-school-btn").click(function(event) {
-		event.preventDefault();	
+		event.preventDefault();
 		$("#img-contents").html("");
 		if($("#fans-page-name").text() === "表特大學") {
 			$("#go-school-btn").text("表特大學");
 			$("#fans-page-name").text("表特輔仁");
-			url = "https://mywebservice.info/beautyUniversity/data_out.php?school=FJU";
+			url = "http://mywebservice.info/beautyUniversity/data_out.php?school=FJU";
 		}
 		else {
 			$("#go-school-btn").text("表特輔仁");
 			$("#fans-page-name").text("表特大學");
-			url = "https://mywebservice.info/beautyUniversity/data_out.php?school=university";
+			url = "http://mywebservice.info/beautyUniversity/data_out.php?school=university";
 		}
 		jsonGet(url);
 	});
