@@ -42,6 +42,14 @@ $(function() {
 
 function mouseEnter(object_id) {
 	console.log("mouseEnter");
+	$("#" + object_id).css("width", "0px");
+	$("#" + object_id).css("height", "0px");
+}
+
+function mouseLeave(object_id) {
+	console.log("mouseLeave");
+	$("#" + object_id).css("width", "100px");
+	$("#" + object_id).css("height", "100px");
 }
 
 function jsonGet(url) {
