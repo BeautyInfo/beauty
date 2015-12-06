@@ -42,8 +42,8 @@ $(function() {
 
 function mouseEnter(object_id) {
 	console.log("mouseEnter");
-	$("#" + object_id).css("width", "0px");
-	$("#" + object_id).css("height", "0px");
+	$("#" + object_id).css("width", "600px");
+	$("#" + object_id).css("height", "600px");
 }
 
 function mouseLeave(object_id) {
