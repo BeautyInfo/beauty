@@ -40,18 +40,6 @@ $(function() {
 	});
 });
 
-function mouseEnter(object_id) {
-	console.log("mouseEnter");
-	$("#" + object_id).css("width", "300");
-	$("#" + object_id).css("height", "300");
-}
-
-function mouseLeave(object_id) {
-	console.log("mouseLeave");
-	$("#" + object_id).css("width", "100");
-	$("#" + object_id).css("height", "100");
-}
-
 function jsonGet(url) {
 	$.getJSON(url, function(data) {
 		var str = "";
@@ -62,8 +50,8 @@ function jsonGet(url) {
 					continue;
 				}
 
-				str += "<a onmouseleave='mouseLeave(" + '"' + data[i]["object_id"] + '"' + ")' onmouseenter='mouseEnter(" + '"' + data[i]["object_id"] + '"' + ")' class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
-				str += "<img id="+ "'" + data[i]["object_id"]+ "'" +" class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
+				str += "<a class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
+				str += "<img class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
 				str += "</a>";
 				j++;
 			}
