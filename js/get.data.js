@@ -42,14 +42,12 @@ $(function() {
 
 function mouseEnter(object_id) {
 	console.log("mouseEnter");
-	$("#" + object_id).css("width", "600px");
-	$("#" + object_id).css("height", "600px");
+	$("#" + object_id).attr("src", "https://graph.facebook.com/" + object_id + "/picture?type=normal");
 }
 
 function mouseLeave(object_id) {
 	console.log("mouseLeave");
-	$("#" + object_id).css("width", "100px");
-	$("#" + object_id).css("height", "100px");
+	$("#" + object_id).attr("src", "https://graph.facebook.com/" + object_id + "/picture?type=thumbnail");
 }
 
 function jsonGet(url) {
