@@ -80,7 +80,7 @@ function jsonGet(url) {
 }
 
 function getCollegeProcess() {
-	$.getJSON("https://mywebservice.info/beautyUniversity/colleges/university", function(data) {
+	$.getJSON("http://mywebservice.info/beautyUniversity/data_out/colleges/university", function(data) {
 		console.log(data);
 	});
 }
