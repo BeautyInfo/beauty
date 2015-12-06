@@ -40,7 +40,7 @@ $(function() {
 	});
 });
 
-function mouseEnter() {
+function mouseEnter(object_id) {
 	console.log("mouseEnter");
 }
 
@@ -54,7 +54,7 @@ function jsonGet(url) {
 					continue;
 				}
 
-				str += "<a onmouseleave='mouseLeave(" + "'" + data[i]["object_id"] + "'" + ")' onmouseenter='mouseEnter(" + "'" + data[i]["object_id"] + "'" + ")' class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
+				str += "<a onmouseleave='mouseLeave(" + '"' + data[i]["object_id"] + '"' + ")' onmouseenter='mouseEnter(" + '"' + data[i]["object_id"] + '"' + ")' class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
 				str += "<img id="+ "'" + data[i]["object_id"]+ "'" +" class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
 				str += "</a>";
 				j++;
