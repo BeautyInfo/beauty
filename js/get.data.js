@@ -38,19 +38,11 @@ $(function() {
 		event.preventDefault();
 
 	});
-	
-	$(".swipebox").mouseenter(function(event) {
-		event.preventDefault();
-		$(".shadow-img-size").css('width', "0px");
-		$(".shadow-img-size").css('height', "0px");
-	});
-	
-	$(".swipebox").mouseleave(function(event) {
-		event.preventDefault();
-		$(".shadow-img-size").css('width', "100px");
-		$(".shadow-img-size").css('height', "100px");
-	});
 });
+
+function mouseEnter() {
+	console.log("mouseEnter");
+}
 
 function jsonGet(url) {
 	$.getJSON(url, function(data) {
@@ -62,7 +54,7 @@ function jsonGet(url) {
 					continue;
 				}
 
-				str += "<a class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
+				str += "<a onmouseenter='mouseEnter()' class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
 				str += "<img class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
 				str += "</a>";
 				j++;
