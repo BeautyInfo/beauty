@@ -8,8 +8,8 @@ $(function() {
 	
 	$( '.swipebox' ).swipebox( {
 		afterOpen: function() {
-			console.log($("img[src*='normal']").attr("src"));
-			$("img[src*='normal']").captionjs({
+			//console.log($("img[src*='normal']").attr("src"));
+			$(".imagelightbox").captionjs({
 				'class_name'      : 'captionjs', // Class name for each <figure>
 				'schema'          : true,        // Use schema.org markup (i.e., itemtype, itemprop)
 				'mode'            : 'stacked',   // default | stacked | animated | hide
@@ -131,7 +131,7 @@ function jsonGet(url) {
 				}
 
 				str += "<a class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
-				str += "<img class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
+				str += "<img data-caption='text' class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
 				str += "</a>";
 				j++;
 			}
@@ -143,7 +143,7 @@ function jsonGet(url) {
 				}
 
 				str += "<a class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
-				str += "<img class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
+				str += "<img data-caption='text' class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
 				str += "</a>";
 				j++;
 			}	
