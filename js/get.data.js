@@ -10,6 +10,9 @@ $(function() {
 		// do stuff
 		console.log(123);
 	}
+	else {
+		console.log("isOpen");
+	}
 	
 	/*
 		$("img[src*='normal']").captionjs({
