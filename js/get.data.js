@@ -5,11 +5,7 @@ $(function() {
 	
 	var url = "http://mywebservice.info/beautyUniversity/data_out/school/university";
 	
-	$( '.swipebox' ).click(function(e) {
-		e.preventDefault();
-		$( '.swipebox' ).swipebox();
-		$("div.slide > img").attr("data-caption", "This test data-caption");
-	});
+	$( '.swipebox' ).swipebox();
 	
 	jsonGet(url);
 	$(window).on('ajaxComplete', function() {
@@ -130,7 +126,7 @@ function jsonGet(url) {
 					continue;
 				}
 
-				str += "<a class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
+				str += "<a data-caption='test-caption' class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
 				str += "<img class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
 				str += "</a>";
 				j++;
@@ -142,7 +138,7 @@ function jsonGet(url) {
 					continue;
 				}
 
-				str += "<a class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
+				str += "<a data-caption='test-caption' class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
 				str += "<img class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
 				str += "</a>";
 				j++;
