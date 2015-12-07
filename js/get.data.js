@@ -8,7 +8,7 @@ $(function() {
 	$( '.swipebox' ).swipebox();
 	if ( $.swipebox.isOpen ) {
 		// do stuff
-		console.log($("img[name='swipebox-img']").attr('src'));
+		console.log($("img[name='swipebox-img']"));
 	}
 	
 	/*
