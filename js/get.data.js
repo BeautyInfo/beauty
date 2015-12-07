@@ -55,10 +55,7 @@ $(function() {
 			//using high chart
 			$('#chart-container').highcharts({
 				chart: {
-					plotBackgroundColor: null,
-					plotBorderWidth: null,
-					plotShadow: false,
-					type: 'pie'
+					type: 'column'
 				},
 					title: {
 					text: $("#fans-page-name").text()
@@ -67,7 +64,7 @@ $(function() {
 					text: "總數"
 				},
 				tooltip: {
-					pointFormat: '人數: <b>{point.count}%</b>'
+					pointFormat: '人數: <b>{point.count}人</b>'
 				},
 				plotOptions: {
 					pie: {
