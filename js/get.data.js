@@ -55,7 +55,7 @@ $(function() {
 			//using high chart
 			$('#chart-container').highcharts({
 				chart: {
-					type: 'column'
+					type: 'pie'
 				},
 					title: {
 					text: $("#fans-page-name").text()
