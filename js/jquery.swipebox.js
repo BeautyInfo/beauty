@@ -824,8 +824,6 @@
     					} );
 
     					img.attr( 'src', src );
-    					img.attr( 'name', "swipebox-img" );
-    					img.attr( 'data-caption', "test-caption" );
     				}
                 }
 			},
