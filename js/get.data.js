@@ -7,7 +7,7 @@ $(function() {
 	
 	$( '.swipebox' ).swipebox();
 	$( '.swipebox' ).click(function() {
-		$(".slide img").attr("data-caption", "This test data-caption");
+		$("div.slide > img").attr("data-caption", "This test data-caption");
 	});
 	
 	jsonGet(url);
