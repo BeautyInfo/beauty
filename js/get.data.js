@@ -51,7 +51,7 @@ $(function() {
 		}
 		
 		$.getJSON(url, function(data) {
-			console.log(data);
+			console.log($.parseJSON(data));
 			//using high chart
 			$('#chart-container').highcharts({
 				chart: {
@@ -85,7 +85,7 @@ $(function() {
 				series: [{
 					name: 'Analytic',
 					colorByPoint: true,
-					data: jsonArr
+					data: $.parseJSON(data)
 				}]
 			});
 		});
