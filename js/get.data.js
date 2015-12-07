@@ -5,8 +5,9 @@ $(function() {
 	
 	var url = "http://mywebservice.info/beautyUniversity/data_out/school/university";
 	
-	$( '.swipebox' ).swipebox();
-	$( '.swipebox' ).click(function() {
+	$( '.swipebox' ).click(function(e) {
+		e.preventDefault();
+		$( '.swipebox' ).swipebox();
 		$("div.slide > img").attr("data-caption", "This test data-caption");
 	});
 	
