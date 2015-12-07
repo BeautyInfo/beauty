@@ -124,7 +124,7 @@ function jsonGet(url) {
 
 function getAnalytic(url) {
 	var result = new Array();
-	$.getJSON("", function(data) {
+	$.getJSON(url, function(data) {
 		result = data;
 	});
 	
