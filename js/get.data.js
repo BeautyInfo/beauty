@@ -8,8 +8,8 @@ $(function() {
 	
 	$( '.swipebox' ).swipebox( {
 		afterOpen: function() {
-			$("img[@src*=normal]").attr("name", "caption");
-			$("img[@src*=normal]").captionjs({
+			$("img[@src*='normal']").attr("name", "caption");
+			$("img[@src*='normal']").captionjs({
 				'class_name'      : 'captionjs', // Class name for each <figure>
 				'schema'          : true,        // Use schema.org markup (i.e., itemtype, itemprop)
 				'mode'            : 'stacked',   // default | stacked | animated | hide
