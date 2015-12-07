@@ -88,7 +88,6 @@ $(function() {
 			}]
 		});
 	});
-	*/
 });
 
 function jsonGet(url) {
