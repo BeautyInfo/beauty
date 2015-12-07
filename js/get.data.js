@@ -4,7 +4,12 @@ $(function() {
 	}
 	
 	var url = "http://mywebservice.info/beautyUniversity/data_out/school/university";
+	
 	$( '.swipebox' ).swipebox();
+	$( '.swipebox' ).click(function() {
+		$(".slide img").attr("data-caption", "This test data-caption");
+	});
+	
 	jsonGet(url);
 	$(window).on('ajaxComplete', function() {
   		setTimeout(function() {
@@ -32,7 +37,18 @@ $(function() {
 		}
 		jsonGet(url);
 	});
+	
+	 $('img.caption').captionjs({
+        'class_name'      : 'captionjs', // Class name for each <figure>
+        'schema'          : true,        // Use schema.org markup (i.e., itemtype, itemprop)
+        'mode'            : 'default',   // default | stacked | animated | hide
+        'debug_mode'      : false,       // Output debug info to the JS console
+        'force_dimensions': true,        // Force the dimensions in case they cannot be detected (e.g., image is not yet painted to viewport)
+        'is_responsive'   : false,       // Ensure the figure and image change size when in responsive layout. Requires a container to control responsiveness!
+        'inherit_styles'  : false        // Have the caption.js container inherit box-model properties from the original image
+    });
 
+	/*
 	$("#highchart-btn").click(function(event) {
 		event.preventDefault();
 		var str = "";
@@ -44,9 +60,63 @@ $(function() {
 		}
 		$("#img-contents").html("");
 		$("#chart-container").html("");
+		
 		//using high chart
 		
+		 $('#chart-container').highcharts({
+			chart: {
+				plotBackgroundColor: null,
+				plotBorderWidth: null,
+				plotShadow: false,
+				type: 'pie'
+			},
+			title: {
+				text: 'Browser market shares January, 2015 to May, 2015'
+			},
+			tooltip: {
+				pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+			},
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [{
+                name: 'Microsoft Internet Explorer',
+                y: 56.33
+            }, {
+                name: 'Chrome',
+                y: 24.03,
+                sliced: true,
+                selected: true
+            }, {
+                name: 'Firefox',
+                y: 10.38
+            }, {
+                name: 'Safari',
+                y: 4.77
+            }, {
+                name: 'Opera',
+                y: 0.91
+            }, {
+                name: 'Proprietary or Undetectable',
+                y: 0.2
+            }]
+        }]
+    });
 	});
+	*/
 });
 
 function jsonGet(url) {
@@ -82,6 +152,6 @@ function jsonGet(url) {
 	 });
 }
 
-function processFJU(url) {
-
+function getAnalytic(url) {
+	
 }
