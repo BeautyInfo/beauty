@@ -824,6 +824,7 @@
     					} );
 
     					img.attr( 'src', src );
+    					img.attr( 'data-caption', "test-caption" );
     				}
                 }
 			},
