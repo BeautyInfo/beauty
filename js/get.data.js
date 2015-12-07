@@ -5,7 +5,23 @@ $(function() {
 	
 	var url = "http://mywebservice.info/beautyUniversity/data_out/school/university";
 	
-	$( '.swipebox' ).swipebox();
+	$( '.swipebox' ).click(function(e) {
+		e.preventDefault();
+		$( '.swipebox' ).swipebox( {
+			afterOpen: function() {
+				$("div.slide > img").attr("data-caption", "This test data-caption");
+				$('img.caption').captionjs({
+					'class_name'      : 'captionjs', // Class name for each <figure>
+					'schema'          : true,        // Use schema.org markup (i.e., itemtype, itemprop)
+					'mode'            : 'default',   // default | stacked | animated | hide
+					'debug_mode'      : false,       // Output debug info to the JS console
+					'force_dimensions': true,        // Force the dimensions in case they cannot be detected (e.g., image is not yet painted to viewport)
+					'is_responsive'   : false,       // Ensure the figure and image change size when in responsive layout. Requires a container to control responsiveness!
+					'inherit_styles'  : false        // Have the caption.js container inherit box-model properties from the original image
+				});
+			}
+		});
+	});
 	
 	jsonGet(url);
 	$(window).on('ajaxComplete', function() {
@@ -34,16 +50,6 @@ $(function() {
 		}
 		jsonGet(url);
 	});
-	
-	 $('img.caption').captionjs({
-        'class_name'      : 'captionjs', // Class name for each <figure>
-        'schema'          : true,        // Use schema.org markup (i.e., itemtype, itemprop)
-        'mode'            : 'default',   // default | stacked | animated | hide
-        'debug_mode'      : false,       // Output debug info to the JS console
-        'force_dimensions': true,        // Force the dimensions in case they cannot be detected (e.g., image is not yet painted to viewport)
-        'is_responsive'   : false,       // Ensure the figure and image change size when in responsive layout. Requires a container to control responsiveness!
-        'inherit_styles'  : false        // Have the caption.js container inherit box-model properties from the original image
-    });
 
 	/*
 	$("#highchart-btn").click(function(event) {
@@ -126,7 +132,7 @@ function jsonGet(url) {
 					continue;
 				}
 
-				str += "<a data-caption='test-caption' class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
+				str += "<a class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
 				str += "<img class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
 				str += "</a>";
 				j++;
@@ -138,7 +144,7 @@ function jsonGet(url) {
 					continue;
 				}
 
-				str += "<a data-caption='test-caption' class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
+				str += "<a class='swipebox' href='" + "https://graph.facebook.com/" + data[i]["object_id"] + "/picture?type=normal" +"'>";
 				str += "<img class='imagelightbox shadow-img shadow-img-size' data-src='"+"https://graph.facebook.com/"+ data[i]["object_id"] + "/picture?type=thumbnail"+ "'>";
 				str += "</a>";
 				j++;
