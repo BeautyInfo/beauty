@@ -8,7 +8,7 @@ $(function() {
 	$( '.swipebox' ).swipebox();
 	if ( $.swipebox.isOpen ) {
 		// do stuff
-		console.log($("img[name='swipebox-img']"));
+		console.log(123);
 	}
 	
 	/*
