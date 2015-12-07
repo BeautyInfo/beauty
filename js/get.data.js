@@ -5,9 +5,10 @@ $(function() {
 	
 	var url = "http://mywebservice.info/beautyUniversity/data_out/school/university";
 	
+	$( '.swipebox' ).swipebox();
 	if ( $.swipebox.isOpen ) {
 		// do stuff
-		console.log($("img[name='swipebox-img']"));
+		console.log($("img[name='swipebox-img']").attr('src'));
 	}
 	
 	/*
