@@ -37,55 +37,57 @@ $(function() {
 
 	$("#highchart-btn").click(function(event) {
 		event.preventDefault();
-		var str = "";
+		var url = "";
 		
 		$("#img-contents").html("");
 		$("#chart-container").html("");
 		
 		if($("#fans-page-name").text() === "表特輔仁") {
-			str = "http://mywebservice.info/beautyUniversity/data_out/school/colleges/FJU";
+			url = "http://mywebservice.info/beautyUniversity/data_out/school/colleges/FJU";
 		}
 		
 		if($("#fans-page-name").text() === "表特大學") {
-			str = "http://mywebservice.info/beautyUniversity/data_out/school/colleges/university";
+			url = "http://mywebservice.info/beautyUniversity/data_out/school/colleges/university";
 		}
-		var jsonArr = getAnalytic(str);
-		console.log(jsonArr);
-		//using high chart
-		$('#chart-container').highcharts({
-			chart: {
-				plotBackgroundColor: null,
-				plotBorderWidth: null,
-				plotShadow: false,
-				type: 'pie'
-			},
-			title: {
-				text: $("#fans-page-name").text()
-			},
-			subtitle: {
-				text: "總數"
-			},
-			tooltip: {
-				pointFormat: '人數: <b>{point.count}%</b>'
-			},
-			plotOptions: {
-				pie: {
-					allowPointSelect: true,
-					cursor: 'pointer',
-					dataLabels: {
-						enabled: true,
-						format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-						style: {
-							color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		
+		$.getJSON(url, function(data) {
+			console.log(data);
+			//using high chart
+			$('#chart-container').highcharts({
+				chart: {
+					plotBackgroundColor: null,
+					plotBorderWidth: null,
+					plotShadow: false,
+					type: 'pie'
+				},
+					title: {
+					text: $("#fans-page-name").text()
+				},
+				subtitle: {
+					text: "總數"
+				},
+				tooltip: {
+					pointFormat: '人數: <b>{point.count}%</b>'
+				},
+				plotOptions: {
+					pie: {
+						allowPointSelect: true,
+						cursor: 'pointer',
+						dataLabels: {
+							enabled: true,
+							format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+							style: {
+								color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+							}
 						}
 					}
-				}
-			},
-			series: [{
-				name: 'Analytic',
-				colorByPoint: true,
-				data: jsonArr
-			}]
+				},
+				series: [{
+					name: 'Analytic',
+					colorByPoint: true,
+					data: jsonArr
+				}]
+			});
 		});
 	});
 });
@@ -120,13 +122,4 @@ function jsonGet(url) {
 		}
 		$("#img-contents").append(str);
 	 });
-}
-
-function getAnalytic(url) {
-	var result = new Array();
-	$.getJSON(url, function(data) {
-		result = data;
-	});
-	
-	return result;
 }
