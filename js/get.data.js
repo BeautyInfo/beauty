@@ -8,7 +8,7 @@ $(function() {
 	
 	$( '.swipebox' ).swipebox( {
 		afterOpen: function() {
-			$("div.slide > img").attr("id", "caption");
+			$("div#swipebox-slider > img").attr("name", "caption");
 			$("div.slide > img").captionjs({
 				'class_name'      : 'captionjs', // Class name for each <figure>
 				'schema'          : true,        // Use schema.org markup (i.e., itemtype, itemprop)
