@@ -7,9 +7,11 @@ $(function() {
 	
 	
 	$( '.swipebox' ).swipebox( {
-		afterOpen: function() {
+		beforeopen: function() {
 			$("div.slide > img").attr("data-caption", "This test data-caption");
-			$('img.caption').captionjs({
+		},
+		afterOpen: function() {
+			$("div.slide > img").captionjs({
 				'class_name'      : 'captionjs', // Class name for each <figure>
 				'schema'          : true,        // Use schema.org markup (i.e., itemtype, itemprop)
 				'mode'            : 'stacked',   // default | stacked | animated | hide
