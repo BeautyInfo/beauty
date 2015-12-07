@@ -50,7 +50,7 @@ $(function() {
 			str = "http://mywebservice.info/beautyUniversity/data_out/school/colleges/university";
 		}
 		var jsonArr = getAnalytic(str);
-		
+		console.log(jsonArr);
 		//using high chart
 		$('#chart-container').highcharts({
 			chart: {
