@@ -60,9 +60,6 @@ $(function() {
 					title: {
 					text: $("#fans-page-name").text()
 				},
-				subtitle: {
-					text: "總數"
-				},
 				tooltip: {
 					pointFormat: '人數: <b>{point.count}人</b>'
 				},
