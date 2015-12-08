@@ -22,6 +22,7 @@ $(function() {
 	$("#go-school-btn").click(function(event) {
 		event.preventDefault();
 		$("#img-contents").html("");
+		$("#chart-container").html("");
 		if($("#fans-page-name").text() === "表特大學") {
 			$("#go-school-btn").text("表特大學");
 			$("#fans-page-name").text("表特輔仁");
