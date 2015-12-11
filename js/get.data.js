@@ -1,8 +1,4 @@
 $(function() {
-	if(window.location.protocol === "https:") {
-		location.href = "http://mywebservice.info/beauty/";
-	}
-	
 	var url = "http://mywebservice.info/beautyUniversity/v1/school/university/analytic/false";
 	
 	$( '.swipebox' ).swipebox();
