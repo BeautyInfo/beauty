@@ -5,4 +5,4 @@
 
 3. slide(HackGen meetup)
 
-[http://slides.com/peter279k/deck-1#/](slide)
+[slide](http://slides.com/peter279k/deck-1#/)
