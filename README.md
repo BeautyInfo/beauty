@@ -3,9 +3,7 @@
 
 2. 顯示分析的資料圖表
 
-3. slide(HackGen meetup)
-
-#### [slide](http://slides.com/peter279k/deck-1#/)
+3. [slide](http://slides.com/peter279k/deck-1#/)(HackGen meetup)
 
 #### 專案圖片僅供學術研究。
 
