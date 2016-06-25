@@ -8,3 +8,7 @@
 #### [slide](http://slides.com/peter279k/deck-1#/)
 
 #### 專案圖片僅供學術研究。
+
+# License
+
+MIT
